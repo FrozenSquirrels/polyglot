@@ -6,15 +6,10 @@ from sqlalchemy.orm import sessionmaker
 from database_setup import Base, BasicPrompt
 from bottle import *
 
-
-
-
-
-
 @route('/')
 def index():
-    return static_file("/views/index.html", root="../static");
-
+    #return static_file("/views/index.html", root="../static");
+    redirect('/index.html')
 @error(404)
 def error404(error):
     return 'This is not the page you are looking for.'
