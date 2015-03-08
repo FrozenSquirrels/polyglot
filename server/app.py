@@ -9,6 +9,8 @@ from bottle import *
 
 
 
+
+
 @route('/')
 def index():
     return static_file("/views/index.html", root="../static");
@@ -37,6 +39,10 @@ def getPrompt():
 def bower_files(filepath):
     return static_file(filepath, root='../bower_components')
 
+#for running locally
 if __name__ == '__main__':
     port = int(os.environ.get('PORT', 1337))
     run(host='0.0.0.0', port=port, debug=True, reloader=True)
+
+#for running on python anywhere
+application = default_app()
