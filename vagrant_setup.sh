@@ -11,7 +11,7 @@ function install {
 }
 
 
-
+install screen
 install vim
 
 set_git_config_commit_vim
