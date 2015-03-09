@@ -19,13 +19,17 @@ function install_node_package_manager {
 }
 
 
+install ssh
+
 install screen
 install vim
 
 set_git_config_commit_vim
 
 install python-pip
+
 pip install bottle
+
 install python-sqlalchemy
 
 install sqlite3
