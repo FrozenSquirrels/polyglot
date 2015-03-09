@@ -16,7 +16,8 @@ install vim
 
 set_git_config_commit_vim
 
-install python-bottle
+install python-pip
+pip install bottle
 install python-sqlalchemy
 
 install sqlite3
