@@ -1,6 +1,8 @@
 # polyglot
 http://frozensquirrels.pythonanywhere.com
 
-# Development 
+## Development 
 If your developing on a Vagrant instance run:
-sudo vagrant_setup.sh
+```
+sudo ./vagrant_setup.sh
+``
