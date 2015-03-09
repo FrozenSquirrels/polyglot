@@ -8,12 +8,15 @@ from bottle import *
 
 @route('/')
 def index():
-    #return static_file("/views/index.html", root="../static");
-    redirect('/index.html')
+    return static_views('index.html')
 
 @error(404)
 def error404(error):
     return 'This is not the page you are looking for.'
+
+@get('/<filepath:re:.*\.html>')
+def static_views(filepath):
+    return static('views/'+filepath)
 
 @get('/static/<filepath:path>')
 def static(filepath):
