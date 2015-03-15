@@ -1,4 +1,7 @@
 #!/bin/bash
+###############
+# Setup a new Linux machine for development.
+###############
 
 sudo apt-get update
 
@@ -27,12 +30,25 @@ function install_nodejs {
   apt-get install -y nodejs
 }
 
+
+function install_chromedriver {
+  #https://devblog.supportbee.com/2014/10/27/setting-up-cucumber-to-run-with-Chrome-on-Linux/
+  sudo apt-get install unzip
+  wget -N http://chromedriver.storage.googleapis.com/2.10/chromedriver_linux32.zip -P ~/Downloads
+  unzip ~/Downloads/chromedriver_linux32.zip -d ~/Downloads
+  chmod +x ~/Downloads/chromedriver
+  sudo mv -f ~/Downloads/chromedriver /usr/local/share/chromedriver
+  sudo ln -s /usr/local/share/chromedriver /usr/local/bin/chromedriver
+  sudo ln -s /usr/local/share/chromedriver /usr/bin/chromedriver
+}
+
 function setup_web_browser_testing {
   install xvfb
   sudo pip install pyvirtualdisplay
   sudo pip install selenium
   install chromium-browser
-  npm install chromedriver
+#  npm install chromedriver
+  install_chromedriver
 }
 
 
@@ -50,10 +66,9 @@ install python-sqlalchemy
 install sqlite3
 install libsqlite3-dev
 
+#install_nodejs
 
-install_nodejs
-
-install_node_package_manager
+#install_node_package_manager
 
 setup_web_browser_testing
 
