@@ -1,6 +1,6 @@
 #!/bin/bash
 
-apt-get update
+sudo apt-get update
 
 function set_git_config_commit_vim {
   git config --global core.editor "vim"
@@ -8,7 +8,7 @@ function set_git_config_commit_vim {
 
 function install {
   echo "INSTALLING: $1"
-  apt-get -y install $1 || { echo "ERROR: installing ${1}"; exit 1; }
+  sudo apt-get -y install $1 || { echo "ERROR: installing ${1}"; exit 1; }
 }
 
 function install_node_package_manager {
@@ -27,29 +27,33 @@ function install_nodejs {
   apt-get install -y nodejs
 }
 
+function setup_web_browser_testing {
+  install xvfb
+  sudo pip install pyvirtualdisplay
+  sudo pip install selenium
+  install chromium-browser
+  npm install chromedriver
+}
+
 
 install ssh
-
 install screen
 install vim
+install curl
 
 set_git_config_commit_vim
 
 install python-pip
 
-pip install bottle
-
+sudo pip install bottle
 install python-sqlalchemy
-
 install sqlite3
 install libsqlite3-dev
 
 
-install curl
 install_nodejs
 
 install_node_package_manager
 
-install xvfb
-pip install selenium
-install chromium-browser
+setup_web_browser_testing
+
