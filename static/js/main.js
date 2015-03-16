@@ -33,10 +33,10 @@ function polyglotViewModel(){
 
     self.promptFactory = function(type, data){
         switch(type){
-          case: 'BASIC'
+          case 'BASIC':
             return new BasicPrompt(data);
           break;
-          case: 'LOCALFILLIN'
+          case 'LOCALFILLIN':
             return new LocalLanguageFillInPrompt(data);
           break;
         }
@@ -60,9 +60,10 @@ function BasicPrompt(promptData){
 
 function LocalLanguageFillInPrompt(promptData){
     var self = this;
+    //inhert from BasicPrompt
     ko.utils.extend(self, new BasicPrompt(promptData));
     self.type    = 'LOCALFILLIN';
-    self.answer  = ko.observable();
+    self.answer  = ko.observable('');
 
     self.check = ko.computed(function(){
       return self.answer().toUpperCase() === self.nativeLanguage().toUpperCase();
