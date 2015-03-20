@@ -21,7 +21,7 @@ function polyglotViewModel(){
           alert('Not correct');
           return;
         }
-        
+
         self.prompts.shift();
     };
     self.currentPrompt = ko.computed(function(){
@@ -66,6 +66,7 @@ function LocalLanguageFillInPrompt(promptData){
     self.answer  = ko.observable('');
 
     self.check = ko.computed(function(){
+      if(!self.answer() || !self.nativeLanguage()){return false;}
       return self.answer().toUpperCase() === self.nativeLanguage().toUpperCase();
     });
 }
