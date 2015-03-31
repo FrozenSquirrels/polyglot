@@ -13,7 +13,7 @@ client = pymongo.MongoClient()
 db = client.project
 collection = db.word 
 
-######## the home pagge (first screen )
+######## the home page (first screen )
  
 @route('/project')
 def index_page():
@@ -67,7 +67,7 @@ def post_new_item():
     return template('success',item=_id)
 
 
-############################## INSERT NEW Cereal ###################################
+############################## INSERT NEW words ###################################
 
 @route('/login/insert', method='GET')
 def get_new_item():
