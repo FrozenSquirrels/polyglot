@@ -7,9 +7,12 @@ function polyglotViewModel(){
             type: "GET",
             success: function(prompts){
                 prompts = JSON.parse(prompts);
-                self.prompts(prompts.map(function(prompt){
-                    return new LocalLanguageFillInPrompt(prompt);
-                }));
+                var promptObjs = []
+                prompts.forEach(function(prompt){
+                  promptObjs.push(self.promptFactory("BASIC", prompt));
+                  promptObjs.push(self.promptFactory("LOCALFILLIN", prompt));
+                });
+                self.prompts(promptObjs);
             },
             error: function(){
                 console.log("server failed to return prompt");
@@ -17,18 +20,26 @@ function polyglotViewModel(){
         });
     };
     self.discardPrompt = function(){
-        if(!self.currentPrompt().check()){
-          alert('Not correct');
-          return;
-        }
-
         self.prompts.shift();
     };
+
+    self.submit = function(){
+      self.currentPrompt().validate();
+      self.discardPrompt();
+    };
+
     self.currentPrompt = ko.computed(function(){
         return self.prompts()[0] || new BasicPrompt({
           english: 'Complete',
-          hindi: 'Pūrī'
+          hindi: 'Pūrī',
+          type: 'basic'
         });
+    });
+    self.promptTemplate = ko.computed(function(){
+      if(!self.currentPrompt() || ! self.currentPrompt().prompt_type){
+        return 'placeholder';
+      }
+      return self.currentPrompt().prompt_type;
     });
 
     self.promptFactory = function(type, data){
@@ -39,36 +50,33 @@ function polyglotViewModel(){
           case 'LOCALFILLIN':
             return new LocalLanguageFillInPrompt(data);
           break;
+          default:
+            return new BasicPrompt(data);
+          break;
         }
     }
 
     self.loadPromts();
 }
-
-//we can use javascript class to represent promts
-//becomes important when promts are more complicated (take user input)
-function BasicPrompt(promptData){
-    var self = this;
-    self.type           = 'BASIC'
-    self.targetLanguage = ko.observable(promptData.hindi);
-    self.nativeLanguage = ko.observable(promptData.english);
-
-    self.check = ko.computed(function(){
-      return true;
+$(document).ready(function(){
+  var resource_counter = 0;
+  var templates = $("template").toArray();
+  templates.forEach(function(template){
+    var url = $(template).attr("url");
+    var id = $(template).attr("id")
+    $.ajax({
+      url: url,
+      type: 'GET',
+      success: function(data){
+        template.innerHTML = data;
+        ++ resource_counter;
+        if(resource_counter == templates.length){
+          ko.applyBindings(new polyglotViewModel());
+        }
+      },
+      error: function(){
+        console.log("could not fetch template " + id);
+      }
     });
-}
-
-function LocalLanguageFillInPrompt(promptData){
-    var self = this;
-    //inhert from BasicPrompt
-    ko.utils.extend(self, new BasicPrompt(promptData));
-    self.type    = 'LOCALFILLIN';
-    self.answer  = ko.observable('');
-
-    self.check = ko.computed(function(){
-      if(!self.answer() || !self.nativeLanguage()){return false;}
-      return self.answer().toUpperCase() === self.nativeLanguage().toUpperCase();
-    });
-}
-
-ko.applyBindings(new polyglotViewModel());
+  });
+});
