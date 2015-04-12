@@ -131,7 +131,7 @@ body{
       <div class="pageContent">
        
 <br>
- <h1 align="center" style="font-size:35px;text-shadow:3px 3px 3px #666;color:#990033">  Welcom {{name}} </h1>
+ <h1 align="center" style="font-size:35px;text-shadow:3px 3px 3px #666;color:#990033">  Welcome {{name}} </h1>
 
            
 <br>
