@@ -147,44 +147,29 @@ body{
 
 
 
-<div class = "navMENU" >
-<ul>
-    <li><a href="#"> About Us</a></li> 
-   
-    <li><a href="http://localhost:8080/project/dataset" > Guest Enter</a></li>
-    <li><a href="#"> Contact Us</a></li>
-    <li><a href="#"> Practice </a></li> 
+  <div class = "navMENU" >
+    <ul>
+      <li><a href="#"> About Us</a></li> 
+      <li><a href="/project/dataset" > Guest Enter</a></li>
+      <li><a href="#"> Contact Us</a></li>
+      <li><a href="#"> Practice </a></li> 
+    </ul>  
 
-
-</ul>  
-
-<script src="Script.js"></script>
-
+  <script src="Script.js"></script>
 
 
 <!------------------------------------>
 
+  <div class="pageContent">
+    <br><br>
+    <div align="center" >
+    <FONT face="Arial ,Tahoma" size="5" color="#FFFF66"> 
+      <marquee bgcolor="#CCCC9A;" direction="right">Learn New Language: New Years Resolutions  </marquee> 
+    </FONT>
+    <img src="http://dirtyclassroom.com/wp-content/uploads/2013/10/Squirrel-8.jpg">
+  </div>
 
-
-      <div class="pageContent">
-        <br><br>
-
-        
-                  
-
-         <div align="center" >
-<FONT face="Arial ,Tahoma" size="5" color="#FFFF66"> 
-<marquee bgcolor="#CCCC9A;" direction="right">Learn New Language: New Years Resolutions  </marquee> 
-</FONT>
-           
-           <img src="http://dirtyclassroom.com/wp-content/uploads/2013/10/Squirrel-8.jpg">
-         </div>
-
-
-
-
-
-      </div>
+  </div>
 
 <!------------------------------------>
 
