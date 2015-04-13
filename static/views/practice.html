@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Polyglot</title>
+    <!--external js-->
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="bower_components/knockout/dist/knockout.debug.js"></script>
+    <!--prompt js-->
+    <script src="static/js/prompts/basic.js"></script>
+    <script src="static/js/prompts/fillin.js"></script>
+    <!--prompt html templates-->
+    <template url="prompts/basic.tpl.html" id="BASIC"></template>
+    <template url="prompts/fillin.tpl.html" id="LOCALFILLIN"></template>
+    <template url="prompts/placeholder.tpl.html" id="placeholder"></template>
+    <!--css-->
+    <link href="bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <link href="static/css/main.css" rel="stylesheet" media="screen">
+</head>
+<body>
+    <div class="container">
+        <!-- navbar -->
+        <div class="header">
+            <ul class="nav nav-pills pull-right">
+                <li><a href="/">Home</a></li>
+                <li><a href="/categories">Categories</a></li>
+                <li><a href="/practice">Practice</a></li>
+            </ul>
+            <h3 class="text-muted">Polyglot</h3>
+        </div>
+        <!-- end navbar -->
+        <div class="row">
+            <div class="col-md-6 col-md-offset-3" id="prompt">
+              <div data-bind="template: {name: promptTemplate}"></div>
+            </div>
+        </div>
+    </div>
+    <script src="static/js/main.js"></script>
+</body>
+</html>
