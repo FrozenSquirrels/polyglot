@@ -128,8 +128,8 @@ body{
          
         <form action="/login" method="post" align="center" color: white>
 
-            <b> Admin Username:</b> <input name="username" type="text"  />
-            <b>Admin Password:</b> <input name="password" type="password" />
+            <b> Admin Username:</b> <input id="username" name="username" type="text"  />
+            <b>Admin Password:</b> <input id="password" name="password" type="password" />
            
             <input value="Reset" type="reset" style="color:#111111;border-radius:4px; width:80px; height:20px; background-color:#FFFFFF;"/>
             <input value="Login" type="submit" style="color:#111111;border-radius:4px; width:80px; height:20px; background-color:#FFFFFF;"/>
