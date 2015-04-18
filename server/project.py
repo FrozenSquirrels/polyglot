@@ -35,7 +35,6 @@ def static_views(filepath):
     return static('views/'+filepath)
 
 
-
 #serve third party javascript and css in bower_components folder
 @get('/bower_components/<filepath:path>')
 def bower_files(filepath):
@@ -58,6 +57,9 @@ def getPrompt():
     print(results)
     return json.dumps([x.serialize for x in results])
     session.close()
+
+
+
 
 #practice section
 @route('/practice')
