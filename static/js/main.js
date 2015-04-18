@@ -11,6 +11,7 @@ function polyglotViewModel(){
                 prompts.forEach(function(prompt){
                   promptObjs.push(self.promptFactory("BASIC", prompt));
                   promptObjs.push(self.promptFactory("LOCALFILLIN", prompt));
+                  promptObjs.push(self.promptFactory("PICTURE", prompt));
                 });
                 self.prompts(promptObjs);
             },
@@ -19,6 +20,7 @@ function polyglotViewModel(){
             }
         });
     };
+
     self.discardPrompt = function(){
         self.prompts.shift();
     };
@@ -49,6 +51,9 @@ function polyglotViewModel(){
           break;
           case 'LOCALFILLIN':
             return new LocalLanguageFillInPrompt(data);
+          break;
+          case 'PICTURE':
+            return new PicturePrompt(data);
           break;
           default:
             return new BasicPrompt(data);
