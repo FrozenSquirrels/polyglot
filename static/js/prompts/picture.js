@@ -3,11 +3,10 @@ function PicturePrompt(promptData){
     //inhert from BasicPrompt
     ko.utils.extend(self, new BasicPrompt(promptData));
 
-console.log('before random');
+    self.bad = ko.observable('');
+
     $.getJSON("/words/random", function(data){
-console.log('random word call');
-console.log(data);
-      self._randomWord = data;
+      self.bad(data.word);
     });
 
     self.prompt_type = "PICTURE";
@@ -20,12 +19,12 @@ console.log(data);
     });
 
     self.randomImage = ko.computed(function(){
-      var path = '/static/words/'+self._randomWord +'.jpg';
+      var path = '/static/words/'+self.bad() +'.jpg';
       return path;
     });
 
     self.randomWord = ko.computed(function(){
-      return self._randomWord; 
+      return self.bad(); 
     });
 
     self.validate = function(){
