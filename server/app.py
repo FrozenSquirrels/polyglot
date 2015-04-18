@@ -1,6 +1,7 @@
 import os
 import json
 import sqlite3
+import words
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 from database_setup import Base, BasicPrompt
@@ -10,6 +11,10 @@ from bottle import *
 def index():
     return static_views('index.html')
 
+@route('/words/random')
+def hello():
+    return words.random('')
+
 @error(404)
 def error404(error):
     return 'This is not the page you are looking for.'
@@ -17,6 +22,7 @@ def error404(error):
 @get('/<filepath:re:.*\.html>')
 def static_views(filepath):
     return static('views/'+filepath)
+
 
 @get('/static/<filepath:path>')
 def static(filepath):
@@ -42,6 +48,6 @@ def bower_files(filepath):
 if __name__ == '__main__':
     port = int(os.environ.get('PORT', 1337))
     run(host='0.0.0.0', port=port, debug=True, reloader=True)
-
-#for running on python anywhere
-application = default_app()
+else:
+    #for running on python anywhere
+    application = default_app()
