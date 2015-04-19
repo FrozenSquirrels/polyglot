@@ -3,7 +3,7 @@ import pymongo
 import csv
 import sys
 import tempfile
-#import server.words
+import server.words
 
 from pymongo import MongoClient
 from pymongo import DESCENDING
