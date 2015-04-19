@@ -60,36 +60,25 @@ def Word():
     commit()
 
 
-
-############## for about us #######################
-
-
+############## about us #######################
 @route('/project/aboutus')
 def about_us():
-
-
     return template('about')
-    commit()
 
 
-    ############## for contact us #######################
-
-
+############## contact us #######################
 @route('/project/contactus')
 def contact_us():
-
-
     return template('contact')
-    commit()
 
-    ############################## EDIT GET  not yet ###################################
+############################## EDIT GET  not yet ###################################
 
 @route('/project/edit/<_id>', method='GET')
 def get_edit(_id):
     item = db.work.find_one({ "_id":ObjectId(_id)})
     return template('edit',r1=item["English"],r2=item["Hindi"], item=_id)
-    #------------------------------ EDIT POST ---------------------------------------------
 
+############################## EDIT GET ###################################
 @route('/login/insert', method='POST')
 def post_new_item():
     print "IN ITEM POST"
@@ -127,7 +116,7 @@ def post_new_item():
     commit()
 
 
-        ############################## DELETE not yet ###################################
+############################## DELETE not yet ###################################
 
 
 @route('/project/delete/<_id>', method='GET')
@@ -146,8 +135,5 @@ def delete(_id):
 
 #----------------------------------------------
 
-
-
 debug(True)
 run(host='0.0.0.0',port=8080,reloader=True)
-
