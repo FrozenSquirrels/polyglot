@@ -128,8 +128,8 @@ body{
          
         <form action="/login" method="post" align="center" color: white>
 
-            <b> Admin Username:</b> <input name="username" type="text"  />
-            <b>Admin Password:</b> <input name="password" type="password" />
+            <b> Admin Username:</b> <input id="username" name="username" type="text"  />
+            <b>Admin Password:</b> <input id="password" name="password" type="password" />
            
             <input value="Reset" type="reset" style="color:#111111;border-radius:4px; width:80px; height:20px; background-color:#FFFFFF;"/>
             <input value="Login" type="submit" style="color:#111111;border-radius:4px; width:80px; height:20px; background-color:#FFFFFF;"/>
@@ -314,7 +314,18 @@ body{
 <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
 </form>
 </div>
-<!--Reem Edit Donation Button-->
+
+      <!--Reem Edit Donation Button-->
+
+
+      <!--Reem Add your ad banner-->
+
+      <div align="center" >
+            <a href="http://www.poly-glot.com" target="_blank"><img src="http://fanfood.com/wp-content/uploads/2012/05/advertise_here_full_banner5468x60.jpg" align="middle" width="400" height="60"></a>
+      </div> 
+      
+      <!--Reem Add your ad banner-->
+
 
 <!------------------------------------>
 

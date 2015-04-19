@@ -1,3 +1,18 @@
-<p data-bind="text: currentPrompt().targetLanguage" class="text-center"></p>
-<input type=text data-bind="value: currentPrompt().answer"></input>
-<button class="btn btn-success" data-bind="click: submit">Submit</button>
+
+<div id="question" data-bind="visible: !currentPrompt().answered()">
+  <p data-bind="text: currentPrompt().targetLanguage" class="text-center"></p>
+  <p data-bind="text: currentPrompt().transliteration" class="text-center"></p>
+  <input type=text data-bind="value: currentPrompt().answer"></input>
+  <button class="btn btn-success" data-bind="click: currentPrompt().validate">Submit</button>
+</div>
+<div id="feedback" data-bind="visible: currentPrompt().answered">
+  <p data-bind="visible: currentPrompt().check">Correct!</p>
+  <p data-bind="visible: !currentPrompt().check()">Incorrect</p>
+  <p>
+    Correct Answer: <span data-bind="text: currentPrompt().nativeLanguage"></span>
+  </p>
+  <p>
+    Your Answer: <span data-bind="text: currentPrompt().answer"></span>
+  </p>
+  <button class="btn btn-success" data-bind="click: discardPrompt">Got it</button>
+</div>

@@ -1,9 +1,30 @@
 function polyglotViewModel(){
+    //lets get some jquery stuff out of the way first
+    $('#prompts-card').hide();//hide the prompt form
+
     var self = this;
     self.prompts = ko.observableArray([]);
-    self.loadPromts = function(){
+    self.categories = ko.observableArray([]);
+    self.selectedCategory = "";
+
+    self.getCategories = function(){
+      $.ajax({
+          url: "/GetCategories",
+          type: "GET",
+          success: function(categories){
+            categories = JSON.parse(categories);
+            console.log(categories[0]);
+            self.categories(categories);
+          },
+          error: function(){
+              console.log("server failed to return categories");
+          }
+      });
+    };
+
+    self.loadPrompts = function(){
         $.ajax({
-            url: "/getBasicPrompts",
+            url: "/GetPrompts/" + self.selectedCategory,
             type: "GET",
             success: function(prompts){
                 prompts = JSON.parse(prompts);
@@ -23,12 +44,20 @@ function polyglotViewModel(){
 
     self.discardPrompt = function(){
         self.prompts.shift();
+        if(self.prompts().length == 0){
+          self.loadPrompts();
+        }
     };
 
-    self.submit = function(){
-      self.currentPrompt().validate();
+    self.next = function(){
       self.discardPrompt();
     };
+
+    self.showCategorySelection = function(){
+      $("#category-selection").show();
+      $("#prompts-card").hide();
+    };
+
 
     self.currentPrompt = ko.computed(function(){
         return self.prompts()[0] || new BasicPrompt({
@@ -43,6 +72,14 @@ function polyglotViewModel(){
       }
       return self.currentPrompt().prompt_type;
     });
+
+    self.selectCategory = function(category){
+      self.selectedCategory = category;
+      self.prompts([]);
+      self.loadPrompts();
+      $("#prompts-card").show();
+      $("#category-selection").hide();
+    };
 
     self.promptFactory = function(type, data){
         switch(type){
@@ -61,7 +98,7 @@ function polyglotViewModel(){
         }
     }
 
-    self.loadPromts();
+    self.getCategories();
 }
 $(document).ready(function(){
   var resource_counter = 0;

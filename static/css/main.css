@@ -28,4 +28,9 @@ body {
     border-radius: 25px;
     padding: 25px;
     margin-top: 25px;
+    text-align: center;
+}
+
+#category-selection{
+  padding-top: 20px;
 }

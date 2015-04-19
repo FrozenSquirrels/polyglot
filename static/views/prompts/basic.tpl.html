@@ -1,3 +1,4 @@
 <p data-bind="text: currentPrompt().nativeLanguage" class="text-center"></p>
+<p data-bind="text: currentPrompt().transliteration" class="text-center"></p>
 <p data-bind="text: currentPrompt().targetLanguage" class="text-center"></p>
 <button class="btn btn-success" data-bind="click: discardPrompt, visible: prompts().length">Got it!</button>

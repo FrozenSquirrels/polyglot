@@ -3,6 +3,7 @@ import pymongo
 import csv
 import sys
 import tempfile
+import server.words
 
 from pymongo import MongoClient
 from pymongo import DESCENDING
@@ -18,6 +19,10 @@ collection = db.word
 @route('/project')
 def index_page():
 	return template('index')
+
+@route('/words/random')
+def randomWord():
+  return server.words.random('hi')
 
   #####################################
 
@@ -109,5 +114,5 @@ def delete(_id):
 
 
 debug(True)
-run(host='localhost',port=8080,reloader=True)
+run(host='0.0.0.0',port=8080,reloader=True)
 

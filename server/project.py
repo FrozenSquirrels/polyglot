@@ -4,13 +4,10 @@ import pymongo
 import csv
 import sys
 import tempfile
+import random
 
 import os
-import json
-import sqlite3
-from sqlalchemy import create_engine
-from sqlalchemy.orm import sessionmaker
-from database_setup import Base, BasicPrompt
+from bson.json_util import dumps
 
 from pymongo import MongoClient
 from pymongo import DESCENDING
@@ -19,10 +16,9 @@ from bson.objectid import ObjectId
 #bottle should look in /static/views for templates
 bottle.TEMPLATE_PATH.insert(0,'../static/views')
 
-#client = MongoClient('localhost', 8080)
-client = pymongo.MongoClient()
-db = client.project
-collection = db.word
+client = pymongo.MongoClient('localhost', 27017)
+db = client.polyglot_db
+words = db.words
 
 #root to landing page (same as /project)
 @route('/')
@@ -33,7 +29,6 @@ def index():
 @get('/<filepath:re:.*\.html>')
 def static_views(filepath):
     return static('views/'+filepath)
-
 
 
 #serve third party javascript and css in bower_components folder
@@ -47,22 +42,28 @@ def static(filepath):
     return static_file(filepath, root='../static')
 
 #get request for get promts, will replace with mongo code
-@get('/getBasicPrompts')
-def getPrompt():
-    #construct database session
-    engine = create_engine('sqlite:///polyglot.db')
-    Base.metadata.bind = engine
-    DBSession = sessionmaker(bind = engine)
-    session = DBSession()
-    results = session.query(BasicPrompt).all()
-    print(results)
-    return json.dumps([x.serialize for x in results])
-    session.close()
+@get('/GetPrompts/<category>')
+def getPrompt(category):
+    category_words = words.find({'category': category})
+    num_words = category_words.count()
+    selected_indices = random.sample(range(0, num_words), min(10, num_words))
+    category_words_list = []
+    for word in category_words:
+        category_words_list.append(word)
+    return dumps(map(lambda index: category_words_list[index], selected_indices))
+
+
+@get('/GetCategories')
+def getCategories():
+    categories = words.distinct("category")
+    return dumps(categories)
+
 
 #practice section
 @route('/practice')
 def practice_page():
     return static_file("practice.html", root="../static/views")
+
 
 ######## the home page (first screen )
 
