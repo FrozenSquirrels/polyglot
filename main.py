@@ -3,7 +3,7 @@ import pymongo
 import csv
 import sys
 import tempfile
-import server.words
+#import server.words
 
 from pymongo import MongoClient
 from pymongo import DESCENDING
@@ -17,6 +17,7 @@ collection = db.word
 ######## the home pagge (first screen )
  
 @route('/project')
+@route('/')
 def index_page():
 	return template('index')
 
