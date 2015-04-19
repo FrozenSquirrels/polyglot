@@ -147,10 +147,10 @@ body{
 
 <div class = "navMENU" >
 <ul>
-    <li><a href="http://localhost:8080/project/aboutus"> About Us</a></li> 
+    <li><a href="/project/aboutus"> About Us</a></li> 
    
-    <li><a href="http://localhost:8080/project/dataset" > Guest Enter</a></li>
-    <li><a href="http://localhost:8080/project/contactus"> Contact Us</a></li>
+    <li><a href="/project/dataset" > Guest Enter</a></li>
+    <li><a href="/project/contactus"> Contact Us</a></li>
     <li><a href="#"> Practice </a></li> 
 
 
@@ -161,12 +161,6 @@ body{
 <!-- ....................................................-->
       <div class="pageContent">
        
-
-
-
-
-
-
 
         
 </div>

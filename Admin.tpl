@@ -137,10 +137,10 @@ body{
    
 <div class = "navMENU" >
 <ul>
-    <li><a href="http://localhost:8080/project/aboutus"> About Us</a></li> 
+    <li><a href="/project/aboutus"> About Us</a></li> 
    
-    <li><a href="http://localhost:8080/project/dataset" > Guest Enter</a></li>
-    <li><a href="http://localhost:8080/project/contactus"> Contact Us</a></li>
+    <li><a href="/project/dataset" > Guest Enter</a></li>
+    <li><a href="/project/contactus"> Contact Us</a></li>
     <li><a href="#"> Practice </a></li> 
 
 
@@ -168,7 +168,7 @@ body{
   <tr >
     
     <th>
-            <button style="color:white;border-radius: 20px/10px; width:200px; height:40px; background: #686868" onClick="window.location='http://localhost:8080/login/insert'"><b>INSERT New Word </b></button>
+            <button style="color:white;border-radius: 20px/10px; width:200px; height:40px; background: #686868" onClick="window.location='/login/insert'"><b>INSERT New Word </b></button>
 
    
 
@@ -185,8 +185,8 @@ body{
   <tr bgcolor="#FFFFFF"><th> Edit </th><th> Delete </th><th>English </th><th>  Hindi  </th>
 %for row in row:
   <tr bgcolor="#FFFFCC">
-    <td><a href="http://localhost:8080/project/edit/{{row[0]}}">Edit </a></td>
-    <td><a href="http://localhost:8080/project/delete/{{row[0]}}">Delete </a></td>
+    <td><a href="/project/edit/{{row[0]}}">Edit </a></td>
+    <td><a href="/project/delete/{{row[0]}}">Delete </a></td>
   %for col in row[1:]:
     <td>{{col}}</td>
   %end
