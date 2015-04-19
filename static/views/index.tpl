@@ -151,7 +151,7 @@ body{
 <ul>
     <li><a href="#"> About Us</a></li>
 
-    <li><a href="http://localhost:8080/project/dataset" > Guest Enter</a></li>
+    <li><a href="/project/dataset" > Guest Enter</a></li>
     <li><a href="#"> Contact Us</a></li>
     <li><a href="/practice"> Practice </a></li>
 
