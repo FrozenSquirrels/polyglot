@@ -1,6 +1,3 @@
-<!-- .................................................................................-->
-
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -11,16 +8,16 @@
      border : 0;
 }
 body{
-     background-color:#666666;
     
+    background-color :#889B9C;
 
-     background-attachment : scroll;
+    background-attachment : scroll;
      background-size : 100% auto;
 
 }
 .blended_grid{
      display : block;
-     width : 1200px;
+     width : 900px;
      overflow : auto;
      margin : 30px auto 0 auto;
 }
@@ -35,9 +32,8 @@ body{
      clear : none;
      height : 200px;
      width : 1000px;
-
-   }
-.pageLeftMenu{
+}
+.nav {
      
       background-color :  #333333;
 
@@ -47,30 +43,49 @@ body{
      width : 900px;
      border: 6px;
 }
-.table, th, td {
-    border: 4px solid black;
-    font-size:2;
-    text-align: center;
-    table-layout : center;
-    background-color :#FFFFC2;
-    float : center;
-    }
 .pageContent{
-     background-color :     #CCCC9A; 
+     background-color :     #B9BEBF; 
     
+    background-repeat: no-repeat;
      
      float : left;
      clear : none;
-     height : 700px;
+     height : 800px;
      width : 900px;
      padding-left: 10px;
+
+}
+.navMENU{
+   
+     background-color : rgba(254,247,255,0.8); 
+     height : 500px;
+}
+.navMENU ul {
+
+}
+.navMENU ul li {
+     list-style-type :none; 
+      width : 222px;
+      float : left;
+      border-right: 2px solid #ccc;
+      text-align: center;
+}
+.navMENU li a {
+     text-denoration: none;
+     color: black;
+     line-height: 50px;
+     display: block;
+
+}
+.navMENU li a:hover {
+    background-color: #990033;
 }
 
-
-
+     
+    
 .pageFooter{
    
-    background-color : #333333;
+     background-color : #333333;
 
      float : left;
      clear : none;
@@ -79,6 +94,7 @@ body{
      
      
 }
+
 .image {
    content:url(c1.jpg);
 }​
@@ -97,41 +113,52 @@ body{
 <div class="blended_grid">
       <div class="pageHeader">
         <br><br>
-                <h1 align="center" style="font-size:35px;text-shadow:3px 3px 3px #666;color:#6B008F;">  </h1>
+                <h1 align="center" style="font-size:35px;text-shadow:3px 3px 3px #666;color:#6B008F;">   </h1>
 
         
         <br><br>
-        <!-- <font face="Arial ,Tahoma" size="5" color="#234789">
-            <br><br>
-            <marquee bgcolor="#FFFFF1" direction="right"> welclksdhfd </marquee>
-        </font> -->
+        
       </div>
-<!-- ............................................-->
 
-
-      <div class="pageLeftMenu">
-       <br>
+<div class="nav">
+<br>
          
-        <form action="/login" method="post" align="center">
+        <form action="/login" method="post" align="center" color: "#FFFFFF">
 
             <b> Admin Username:</b> <input name="username" type="text"  />
-            <b>Admin Password:</b> <input name="password" type="password" />
+            <b> Admin Password:</b> <input name="password" type="password" />
            
             <input value="Reset" type="reset" style="color:#111111;border-radius:4px; width:80px; height:20px; background-color:#FFFFFF;"/>
             <input value="Login" type="submit" style="color:#111111;border-radius:4px; width:80px; height:20px; background-color:#FFFFFF;"/>
            
         </form>
-      </div>
+</div>
 <!-- ............................................-->
    
+<div class = "navMENU" >
+<ul>
+    <li><a href="http://localhost:8080/project/aboutus"> About Us</a></li> 
+   
+    <li><a href="http://localhost:8080/project/dataset" > Guest Enter</a></li>
+    <li><a href="http://localhost:8080/project/contactus"> Contact Us</a></li>
+    <li><a href="#"> Practice </a></li> 
+
+
+</ul>  
+
+<script src="Script.js"></script>
+
+
 
 
 
 <!-- ............................................-->
       <div class="pageContent">
        
+ <div class="pageContent">
+       
 <br>
- <h1 align="center" style="font-size:35px;text-shadow:3px 3px 3px #666;color:#990033">  Welcome {{name}} </h1>
+ <h1 align="center" style="font-size:35px;text-shadow:3px 3px 3px #666;color:#FFFFFF">  Welcome {{name}} </h1>
 
            
 <br>
@@ -141,20 +168,23 @@ body{
   <tr >
     
     <th>
-            <button style="color:white;border-radius: 30px/10px; width:160px; height:40px; background: #686868" onClick="window.location='http://localhost:8080/login/insert'"><b>INSERT New Word </b></button>
+            <button style="color:white;border-radius: 20px/10px; width:200px; height:40px; background: #686868" onClick="window.location='http://localhost:8080/login/insert'"><b>INSERT New Word </b></button>
 
    
 
 </th>
 </tr>
-<br><br><br><br>
+<br>
+<br>
+<br>
+<br>
 <tr>
   
   <td>
-<table  border="2"  >
-  <tr bgcolor="#990033"><th> Edit </th><th> Delete </th><th>English </th><th>  Hindi  </th>
+<table width= "300" border="2"  >
+  <tr bgcolor="#FFFFFF"><th> Edit </th><th> Delete </th><th>English </th><th>  Hindi  </th>
 %for row in row:
-  <tr bgcolor="#990033">
+  <tr bgcolor="#FFFFCC">
     <td><a href="http://localhost:8080/project/edit/{{row[0]}}">Edit </a></td>
     <td><a href="http://localhost:8080/project/delete/{{row[0]}}">Delete </a></td>
   %for col in row[1:]:

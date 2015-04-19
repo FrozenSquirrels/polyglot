@@ -14,7 +14,7 @@ client = pymongo.MongoClient()
 db = client.project
 collection = db.word 
 
-######## the home page (first screen )
+######## the home pagge (first screen )
  
 @route('/project')
 def index_page():
@@ -46,8 +46,43 @@ def LOG():
     return template('Admin')
 
 
+############## for guest #######################
 
-    ############################## EDIT GET ###################################
+
+@route('/project/dataset')
+def Word():
+
+    items = db.word.find().sort("English", pymongo.DESCENDING)
+    rows = []
+    for item in items:
+        rows.append((item["English"],item["Hindi"]))
+    return template('guest', row=rows)
+    commit()
+
+
+
+############## for about us #######################
+
+
+@route('/project/aboutus')
+def about_us():
+
+
+    return template('about')
+    commit()
+
+
+    ############## for contact us #######################
+
+
+@route('/project/contactus')
+def contact_us():
+
+
+    return template('contact')
+    commit()
+
+    ############################## EDIT GET  not yet ###################################
 
 @route('/project/edit/<_id>', method='GET')
 def get_edit(_id):
@@ -72,11 +107,11 @@ def post_new_item():
     return template('success',item=_id)
 
 
-############################## INSERT NEW words ###################################
+############################## INSERT NEW Cereal ###################################
 
 @route('/login/insert', method='GET')
 def get_new_item():
-    return template('ADD_Word.tpl')
+    return template('insert.tpl')
 
 @route('/login/insert', method='POST')
 def post_new_item():
@@ -88,11 +123,11 @@ def post_new_item():
     
 
     db.word.insert({"English":English, "Hindi":Hindi})
-    return template('Add_success', C=Cereal)
+    return template('Add_success', C=English)
     commit()
 
 
-        ############################## DELETE ###################################
+        ############################## DELETE not yet ###################################
 
 
 @route('/project/delete/<_id>', method='GET')

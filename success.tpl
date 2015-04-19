@@ -1,6 +1,3 @@
-%#template for view after success update
-
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -11,9 +8,10 @@
      border : 0;
 }
 body{
-     background-image : url('https://d1zqayhc1yz6oo.cloudfront.net/s/feel_resources/modern2/backgrounds/images/zzz-legacy-wood.jpg?_v=1');
+    
+    background-color :#889B9C;
 
-     background-attachment : scroll;
+    background-attachment : scroll;
      background-size : 100% auto;
 
 }
@@ -24,20 +22,20 @@ body{
      margin : 30px auto 0 auto;
 }
 .pageHeader{
-     background-color : rgba(237,253,27,0.6);
-     background-image : url('http://www.silverytweedcereals.co.uk/template_images/1.jpg');
+     
+     background-image : url( 'http://www.willamette.edu/dept/llc/images/headers/01.gif');
      background-repeat: no-repeat;
-     background-size: 900px 350px;
+     background-size: 900px 200px;
   
 
      float : left;
      clear : none;
      height : 200px;
-     width : 900px;
+     width : 1000px;
 }
-.pageLeftMenu{
+.nav {
      
-      background-color :#CDAAD9;
+      background-color :  #333333;
 
      float : left;
      clear : none;
@@ -46,8 +44,9 @@ body{
      border: 6px;
 }
 .pageContent{
-     background-color : rgba(254,247,255,0.8); 
+     background-color :     #B9BEBF; 
     
+    background-repeat: repeat;
      
      float : left;
      clear : none;
@@ -56,9 +55,37 @@ body{
      padding-left: 10px;
 
 }
+.navMENU{
+   
+     background-color : rgba(254,247,255,0.8); 
+     height : 500px;
+}
+.navMENU ul {
+
+}
+.navMENU ul li {
+     list-style-type :none; 
+      width : 222px;
+      float : left;
+      border-right: 2px solid #ccc;
+      text-align: center;
+}
+.navMENU li a {
+     text-denoration: none;
+     color: black;
+     line-height: 50px;
+     display: block;
+
+}
+.navMENU li a:hover {
+    background-color: #990033;
+}
+
+     
+    
 .pageFooter{
    
-     background-color :#CDAAD9;
+     background-color : #333333;
 
      float : left;
      clear : none;
@@ -67,6 +94,7 @@ body{
      
      
 }
+
 .image {
    content:url(c1.jpg);
 }​

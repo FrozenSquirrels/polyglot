@@ -99,8 +99,10 @@ body{
    content:url(c1.jpg);
 }​
 
+
 </style>
-<!-- ............................................................................-->
+
+
 
 
 
@@ -123,7 +125,7 @@ body{
 <div class="nav">
 <br>
          
-        <form action="/login" method="post" align="center" color: "#FFFFFF">
+        <form action="/login" method="post" align="center" color: white>
 
             <b> Admin Username:</b> <input name="username" type="text"  />
             <b>Admin Password:</b> <input name="password" type="password" />
@@ -133,10 +135,8 @@ body{
            
         </form>
 </div>
-<!------------------------------------>
-
-
-      <div class="pageLeftMenu">
+<!-- ......................................... -->
+    <div class="pageLeftMenu">
        
       </div>
 <!------------------------------------>
@@ -156,14 +156,33 @@ body{
 </ul>  
 
 <script src="Script.js"></script>
-<!-- ............................................................................-->
+
+
+
+
+
+
+
+<!-- ......................................... -->
       <div class="pageContent">
+        <br><br>
 
-        <h3 align="center"><img src="http://icons.iconarchive.com/icons/oxygen-icons.org/oxygen/256/Apps-preferences-desktop-user-password-icon.png" >
-       </h3> <br><br> 
+        
+                  
+<p> Your target data= {{item}}</p>
 
-        <h3  align="center" style="font-size:35px;text-shadow:2px 2px 2px #666;color:#FFFFFF;"> Login Failed!! <br> Check your username or password and try again</h3>
+<form action="/project/edit/{{item}}" method="post">
+  <table>
 
+<tr><th align="left"> English: </th><th align="left"><input type="text" name="English" value="{{r1}}" size="100" maxlength="100"></th> </tr>
+<tr><th align="left">Hindi: </th><th align="left"><input type="text" name="Hindi" value="{{r2}}" size="100" maxlength="100"></th> </tr>
+
+
+</table>
+
+<br><br>
+
+<input value="save" type="submit" name="save" style="color:#111111;border-radius:4px; width:90px; height:30px; background-color:#dcc8f0;" algin="center"/>
 
 
 </form>
@@ -173,15 +192,49 @@ body{
 
       </div>
 
-<!-- ............................................................................-->
-     <div class="pageFooter">
+<!-- ................................... -->
+      <div class="pageFooter">
         <br>
-      <h4 align="center" style= color:white> For Software Engineering Methodology Course </h4> 
+      <h4 align="center"> For Software Engineering Methodology Course </h4> 
       
-      <h4 align="center" style= color:white> Developed by Frozen Squirrels  </h4> 
+      <h4 align="center"> Developed by Frozen Squirrels  </h4> 
       
-      <h4 align="center" style= color:white> © All right reserved   </h4> 
+      <h4 align="center"> © All right reserved   </h4> 
       </div>
 </div>
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

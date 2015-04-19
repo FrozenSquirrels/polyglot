@@ -44,7 +44,7 @@ body{
      border: 6px;
 }
 .pageContent{
-     background-color :     #B9BEBF; 
+     background-color :#B9BEBF; 
     
     background-repeat: repeat;
      
@@ -99,10 +99,9 @@ body{
    content:url(c1.jpg);
 }​
 
+
 </style>
 <!-- ............................................................................-->
-
-
 
  <title>Home</title>
      <meta name="description" content="* WELCOME TO The LEARNING WEBSITE *">
@@ -123,7 +122,7 @@ body{
 <div class="nav">
 <br>
          
-        <form action="/login" method="post" align="center" color: "#FFFFFF">
+        <form action="/login" method="post" align="center" color: white>
 
             <b> Admin Username:</b> <input name="username" type="text"  />
             <b>Admin Password:</b> <input name="password" type="password" />
@@ -140,47 +139,24 @@ body{
        
       </div>
 <!------------------------------------>
-   
-
-
-
-<div class = "navMENU" >
-<ul>
-    <li><a href="http://localhost:8080/project/aboutus"> About Us</a></li> 
-   
-    <li><a href="http://localhost:8080/project/dataset" > Guest Enter</a></li>
-    <li><a href="http://localhost:8080/project/contactus"> Contact Us</a></li>
-    <li><a href="#"> Practice </a></li> 
-
-
-</ul>  
-
-<script src="Script.js"></script>
 <!-- ............................................................................-->
-      <div class="pageContent">
+  <div class="pageContent">
+        <br><br>
 
-        <h3 align="center"><img src="http://icons.iconarchive.com/icons/oxygen-icons.org/oxygen/256/Apps-preferences-desktop-user-password-icon.png" >
-       </h3> <br><br> 
-
-        <h3  align="center" style="font-size:35px;text-shadow:2px 2px 2px #666;color:#FFFFFF;"> Login Failed!! <br> Check your username or password and try again</h3>
-
-
-
+  <h3 align="center" style="font-size:35px;text-shadow:3px 3px 3px #666;color:#6B008F;">Your item {{C}} was successfully inserted</h3>
+<br><a href="http://localhost:8080/project/dataset"><h4> See the data after insert...</h4></a> 
 </form>
 
-
-
-
-      </div>
+  </div>
 
 <!-- ............................................................................-->
-     <div class="pageFooter">
+      <div class="pageFooter">
         <br>
-      <h4 align="center" style= color:white> For Software Engineering Methodology Course </h4> 
+      <h4 align="center"> For Software Engineering Methodology Course </h4> 
       
-      <h4 align="center" style= color:white> Developed by Frozen Squirrels  </h4> 
+      <h4 align="center"> Developed by Frozen Squirrels </h4> 
       
-      <h4 align="center" style= color:white> © All right reserved   </h4> 
+      <h4 align="center"> © All right reserved   </h4> 
       </div>
 </div>
 </body>

@@ -99,17 +99,13 @@ body{
    content:url(c1.jpg);
 }​
 
+
 </style>
-<!-- ............................................................................-->
-
-
 
  <title>Home</title>
      <meta name="description" content="* WELCOME TO The LEARNING WEBSITE *">
-
-</head>
 <body>
-  
+</head>
 <div class="blended_grid">
       <div class="pageHeader">
         <br><br>
@@ -126,17 +122,18 @@ body{
         <form action="/login" method="post" align="center" color: "#FFFFFF">
 
             <b> Admin Username:</b> <input name="username" type="text"  />
-            <b>Admin Password:</b> <input name="password" type="password" />
+            <b> Admin Password:</b> <input name="password" type="password" />
            
             <input value="Reset" type="reset" style="color:#111111;border-radius:4px; width:80px; height:20px; background-color:#FFFFFF;"/>
             <input value="Login" type="submit" style="color:#111111;border-radius:4px; width:80px; height:20px; background-color:#FFFFFF;"/>
            
         </form>
 </div>
-<!------------------------------------>
+<!-- ..........
+<!-- ....................................................-->
+   
 
-
-      <div class="pageLeftMenu">
+ <div class="pageLeftMenu">
        
       </div>
 <!------------------------------------>
@@ -156,25 +153,57 @@ body{
 </ul>  
 
 <script src="Script.js"></script>
-<!-- ............................................................................-->
+
+
+
+<!-- ....................................................-->
       <div class="pageContent">
-
-        <h3 align="center"><img src="http://icons.iconarchive.com/icons/oxygen-icons.org/oxygen/256/Apps-preferences-desktop-user-password-icon.png" >
-       </h3> <br><br> 
-
-        <h3  align="center" style="font-size:35px;text-shadow:2px 2px 2px #666;color:#FFFFFF;"> Login Failed!! <br> Check your username or password and try again</h3>
+       
+<br>
 
 
 
-</form>
+<table width= "300" border="2" >
+<col text-align="center"; width="60">
+<col width="50">
+<col width="60">
+<col width="80">
+<col width="80">
+<col width="50">
+<col width="60">
+<col width="80">
+<col width="60">
+<col width="80">
+<col width="60">
+<col width="60">
+<col width="60">
+<col width="60">
+<col width="60">
+  <tr style="color:#FFFFCC"><th  > English </th><th>  Hihdi </th>
+%for row in row:
+  <tr>
+  %for col in row:
+    <td>{{col}}</td>
+  %end
+  </tr>
+%end
+
+</table>
 
 
 
 
-      </div>
+<br>
+<h2 align="center"><a href="http://localhost:8080/project/dataset" >Go To the top</a></h2>
 
-<!-- ............................................................................-->
-     <div class="pageFooter">
+
+<br>
+
+        
+</div>
+
+
+  <div class="pageFooter">
         <br>
       <h4 align="center" style= color:white> For Software Engineering Methodology Course </h4> 
       
@@ -182,6 +211,21 @@ body{
       
       <h4 align="center" style= color:white> © All right reserved   </h4> 
       </div>
-</div>
+
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

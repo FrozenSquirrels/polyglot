@@ -100,9 +100,6 @@ body{
 }​
 
 </style>
-<!-- ............................................................................-->
-
-
 
  <title>Home</title>
      <meta name="description" content="* WELCOME TO The LEARNING WEBSITE *">
@@ -113,17 +110,22 @@ body{
 <div class="blended_grid">
       <div class="pageHeader">
         <br><br>
-                <h1 align="center" style="font-size:35px;text-shadow:3px 3px 3px #666;color:#6B008F;">   </h1>
+                <h1 align="center" style="font-size:35px;text-shadow:3px 3px 3px #666;color:#6B008F;">  Welcome </h1>
 
         
         <br><br>
-        
+        <!-- <font face="Arial ,Tahoma" size="5" color="#234789">
+            <br><br>
+            <marquee bgcolor="#FFFFF1" direction="right"> welclksdhfd </marquee>
+        </font> -->
       </div>
+<!------------------------------------>
 
-<div class="nav">
-<br>
+
+      <div class="pageLeftMenu">
+       <br>
          
-        <form action="/login" method="post" align="center" color: "#FFFFFF">
+        <form action="/login" method="post" align="center">
 
             <b> Admin Username:</b> <input name="username" type="text"  />
             <b>Admin Password:</b> <input name="password" type="password" />
@@ -132,56 +134,74 @@ body{
             <input value="Login" type="submit" style="color:#111111;border-radius:4px; width:80px; height:20px; background-color:#FFFFFF;"/>
            
         </form>
-</div>
-<!------------------------------------>
-
-
-      <div class="pageLeftMenu">
-       
       </div>
 <!------------------------------------>
    
 
 
 
-<div class = "navMENU" >
-<ul>
-    <li><a href="http://localhost:8080/project/aboutus"> About Us</a></li> 
-   
-    <li><a href="http://localhost:8080/project/dataset" > Guest Enter</a></li>
-    <li><a href="http://localhost:8080/project/contactus"> Contact Us</a></li>
-    <li><a href="#"> Practice </a></li> 
 
-
-</ul>  
-
-<script src="Script.js"></script>
-<!-- ............................................................................-->
+<!------------------------------------>
       <div class="pageContent">
+        <br><br>
 
-        <h3 align="center"><img src="http://icons.iconarchive.com/icons/oxygen-icons.org/oxygen/256/Apps-preferences-desktop-user-password-icon.png" >
-       </h3> <br><br> 
+        
+              <h2>Add a new word to the dataset:</h2>
 
-        <h3  align="center" style="font-size:35px;text-shadow:2px 2px 2px #666;color:#FFFFFF;"> Login Failed!! <br> Check your username or password and try again</h3>
+<form action="/login/insert" method="POST">
 
 
+<table>
 
+<tr><th align="left">English: </th><th align="left"><input type="text"  size="60" maxlength="100" name="English" ></th> </tr>
+<tr><th align="left"> Hindi: </th><th align="left"><input type="text"  size="10" maxlength="10" name="Hindi"></th> </tr>
+
+</table>
+
+
+<br><br><br>
+
+<button <type="submit" value="save"><b>Insert new Word</b></button> 
+<button type="reset" value="Reset"><b>Reset</b></button> 
 </form>
 
 
 
 
+
       </div>
 
-<!-- ............................................................................-->
-     <div class="pageFooter">
+<!------------------------------------>
+      <div class="pageFooter">
         <br>
-      <h4 align="center" style= color:white> For Software Engineering Methodology Course </h4> 
+      <h4 align="center"> For Software Engineering Methodology Course </h4> 
       
-      <h4 align="center" style= color:white> Developed by Frozen Squirrels  </h4> 
+      <h4 align="center"> Developed by Frozen Squirrels </h4> 
       
-      <h4 align="center" style= color:white> © All right reserved   </h4> 
+      <h4 align="center"> © All right reserved   </h4> 
       </div>
 </div>
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  

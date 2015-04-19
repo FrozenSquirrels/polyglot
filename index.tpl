@@ -8,10 +8,10 @@
      border : 0;
 }
 body{
-    background-color:#666666;
     
+    background-color :#889B9C;
 
-     background-attachment : scroll;
+    background-attachment : scroll;
      background-size : 100% auto;
 
 }
@@ -44,9 +44,9 @@ body{
      border: 6px;
 }
 .pageContent{
-     background-color :     #CCCC9A; 
-    background-image: url("image.png");
-    background-repeat: no-repeat;
+     background-color :     #B9BEBF; 
+    
+    background-repeat: repeat;
      
      float : left;
      clear : none;
@@ -126,10 +126,10 @@ body{
 <div class="nav">
 <br>
          
-        <form action="/login" method="post" align="center" color: white>
+        <form action="/login" method="post" align="center" color: "#FFFFFF">
 
-            <b> Admin Username:</b> <input id="username" name="username" type="text"  />
-            <b>Admin Password:</b> <input id="password" name="password" type="password" />
+            <b> Admin Username:</b> <input name="username" type="text"  />
+            <b>Admin Password:</b> <input name="password" type="password" />
            
             <input value="Reset" type="reset" style="color:#111111;border-radius:4px; width:80px; height:20px; background-color:#FFFFFF;"/>
             <input value="Login" type="submit" style="color:#111111;border-radius:4px; width:80px; height:20px; background-color:#FFFFFF;"/>
@@ -144,19 +144,26 @@ body{
       </div>
 <!------------------------------------>
    
+   
 
 
 
   <div class = "navMENU" >
-    <ul>
-      <li><a href="#"> About Us</a></li> 
-      <li><a href="/project/dataset" > Guest Enter</a></li>
-      <li><a href="#"> Contact Us</a></li>
-      <li><a href="#"> Practice </a></li> 
-    </ul>  
+<ul>
+    <li><a href="http://localhost:8080/project/aboutus"> About Us</a></li> 
+   
+    <li><a href="http://localhost:8080/project/dataset" > Guest Enter</a></li>
+    <li><a href="http://localhost:8080/project/contactus"> Contact Us</a></li>
+    <li><a href="#"> Practice </a></li> 
 
-  <script src="Script.js"></script>
 
+</ul>  
+
+<script src="Script.js"></script>
+
+
+
+<!------------------------------------>
 
 
 <!--Reem Edit FaceBook login + like + share button-->
@@ -289,16 +296,56 @@ body{
 <!------------------------------------>
 
   <div class="pageContent">
-    <br><br>
-    <div align="center" >
-    <FONT face="Arial ,Tahoma" size="5" color="#FFFF66"> 
-      <marquee bgcolor="#CCCC9A;" direction="right">Learn New Language: New Years Resolutions  </marquee> 
-    </FONT>
-    <img src="http://dirtyclassroom.com/wp-content/uploads/2013/10/Squirrel-8.jpg">
-  </div>
+        <br><br>
 
-  </div>
 
+
+
+<table  border= "3" ALIGN="center" width="900" cellpadding="10" cellspacing="0">
+
+
+<tr>
+
+<td ALIGN="center"><video width="320" height="240" controls>
+  <source src="https://youtu.be/ajSOwcJZKd8?t=14" type="video/mp4">
+  <source src="movie.ogg" type="video/ogg">
+Your browser does not support the video tag.
+</video></td>
+
+<td ALIGN="center"><video width="320" height="240" controls>
+  <source src="https://www.youtube.com/watch?v=xR1fut-01qM" type="video/mp4">
+  <source src="movie.ogg" type="video/ogg">
+Your browser does not support the video tag.
+</video></td>
+
+</tr>
+
+
+</table>
+        
+                  <div ALIGN="center">
+
+    
+           
+         
+           <table  border= "3" ALIGN="center" width="100" cellpadding="100" cellspacing="100">
+
+  
+         <tr >
+         <td >
+
+         <script src="http://h2.flashvortex.com/display.php?id=2_1429132670_43105_507_0_294_106_9_2_121" type="text/javascript"></script>
+         </td></tr>
+
+        </table>
+    
+            </div>
+          </div>
+          </script>
+        
+
+
+<!------------------------------------>
 
 <!--Reem Edit Donation Button-->
 <div align="center" >

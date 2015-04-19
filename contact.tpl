@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+
 <html>
 <head>
 <style>    
@@ -23,7 +23,7 @@ body{
 }
 .pageHeader{
      
-     background-image : url( 'http://www.willamette.edu/dept/llc/images/headers/01.gif');
+     background-image : url( 'http://patelhospital.com/Images/Common/contactus_banner.jpg');
      background-repeat: no-repeat;
      background-size: 900px 200px;
   
@@ -50,7 +50,7 @@ body{
      
      float : left;
      clear : none;
-     height : 500px;
+     height : 800px;
      width : 900px;
      padding-left: 10px;
 
@@ -99,9 +99,8 @@ body{
    content:url(c1.jpg);
 }​
 
-</style>
-<!-- ............................................................................-->
 
+</style>
 
 
  <title>Home</title>
@@ -120,19 +119,7 @@ body{
         
       </div>
 
-<div class="nav">
-<br>
-         
-        <form action="/login" method="post" align="center" color: "#FFFFFF">
 
-            <b> Admin Username:</b> <input name="username" type="text"  />
-            <b>Admin Password:</b> <input name="password" type="password" />
-           
-            <input value="Reset" type="reset" style="color:#111111;border-radius:4px; width:80px; height:20px; background-color:#FFFFFF;"/>
-            <input value="Login" type="submit" style="color:#111111;border-radius:4px; width:80px; height:20px; background-color:#FFFFFF;"/>
-           
-        </form>
-</div>
 <!------------------------------------>
 
 
@@ -156,25 +143,47 @@ body{
 </ul>  
 
 <script src="Script.js"></script>
-<!-- ............................................................................-->
+
+
+
+<!------------------------------------>
+
+
+
       <div class="pageContent">
-
-        <h3 align="center"><img src="http://icons.iconarchive.com/icons/oxygen-icons.org/oxygen/256/Apps-preferences-desktop-user-password-icon.png" >
-       </h3> <br><br> 
-
-        <h3  align="center" style="font-size:35px;text-shadow:2px 2px 2px #666;color:#FFFFFF;"> Login Failed!! <br> Check your username or password and try again</h3>
+        <br><br>
 
 
 
-</form>
+<table style="width:80%" ALIGN="center" border="9" cellpadding="4" cellspacing="5">
+
+<tr>
+<td ALIGN="center"><img src="http://icons.iconarchive.com/icons/mysitemyway/clean-3d/256/glossy-3d-blue-phone-icon.png" alt="Test Image"/></td>
+<td ALIGN="center"><font size="6" color="330033">330-389-0928</font></td>
+</tr>
+
+
+<tr>
+<td ALIGN="center"><img src="http://uxrepo.com/static/icon-sets/typicons/png32/256/000000/github-256-000000.png" alt="Test Image"/></td>
+<td ALIGN="center"><font size="6" color="330033"> FrozenSquirrels </font></td>
+</tr>
+
+<tr>
+<td ALIGN="center"><img src="http://www.dundalkws.com/images/Email-icon-small.png" alt="Test Image"/></td>
+<td ALIGN="center"><font size="6" color="330033"> hmuhajab@kent.edu</font></td>
+</tr>
 
 
 
 
-      </div>
 
-<!-- ............................................................................-->
-     <div class="pageFooter">
+</table>
+
+</div>
+</div>
+
+
+<div class="pageFooter">
         <br>
       <h4 align="center" style= color:white> For Software Engineering Methodology Course </h4> 
       
@@ -182,6 +191,7 @@ body{
       
       <h4 align="center" style= color:white> © All right reserved   </h4> 
       </div>
-</div>
+
 </body>
 </html>
+
