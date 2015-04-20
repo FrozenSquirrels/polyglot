@@ -34,6 +34,10 @@ def do_login():
     username = request.forms.get('username')
     password = request.forms.get('password')
 
+    items = db.word.find().sort("English", pymongo.DESCENDING)
+    R = []
+    for item in items:
+        R.append((item["_id"],item["English"],item["Hindi"]))
     if  username == "Hanan" and password == "hhh" or username == "Reem" and password == "rrr" or username == "Nathan" and password == "nnn" :
         return template('Admin', row=R, name=username)
     else:
@@ -45,7 +49,6 @@ def LOG():
 
 
 ############## for guest #######################
-
 
 @route('/dataset')
 def Word():
