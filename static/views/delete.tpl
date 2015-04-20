@@ -15,15 +15,4 @@
     </form>
       </div>
 
-<!-- ......................................... -->
-      <div class="pageFooter">
-        <br>
-      <h4 align="center"> For Software Engineering Methodology Course  </h4> 
-      
-      <h4 align="center"> Developed by Frozen Squirrels  </h4> 
-      
-      <h4 align="center"> © All right reserved   </h4> 
-      </div>
-</div>
-</body>
-</html>
+% include('footer.tpl')
