@@ -144,7 +144,7 @@ body{
 
 
 
-  <form action="/project/delete/{{item}}" method="post" align="center">
+  <form action="/delete/{{item}}" method="post" align="center">
     <br><br>
     <h2 align="center" style="font-size:35px;text-shadow:3px 3px 3px #666;color:#6B008F;">   Your target data= {{item}} </h2> <br><br>
 

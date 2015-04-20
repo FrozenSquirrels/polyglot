@@ -143,10 +143,10 @@ body{
 
 <div class = "navMENU" >
 <ul>
-    <li><a href="/project/aboutus"> About Us</a></li> 
+    <li><a href="/aboutus"> About Us</a></li> 
    
-    <li><a href="/project/dataset" > Guest Enter</a></li>
-    <li><a href="/project/contactus"> Contact Us</a></li>
+    <li><a href="/dataset" > Guest Enter</a></li>
+    <li><a href="/contactus"> Contact Us</a></li>
     <li><a href="#"> Practice </a></li> 
 
 
@@ -194,7 +194,7 @@ body{
 
 
 <br>
-<h2 align="center"><a href="/project/dataset" >Go To the top</a></h2>
+<h2 align="center"><a href="/dataset" >Go To the top</a></h2>
 
 
 <br>

@@ -146,10 +146,10 @@ body{
 
 <div class = "navMENU" >
 <ul>
-    <li><a href="/project/aboutus"> About Us</a></li> 
+    <li><a href="/aboutus"> About Us</a></li> 
    
-    <li><a href="/project/dataset" > Guest Enter</a></li>
-    <li><a href="/project/contactus"> Contact Us</a></li>
+    <li><a href="/dataset" > Guest Enter</a></li>
+    <li><a href="/contactus"> Contact Us</a></li>
     <li><a href="#"> Practice </a></li> 
 
 
@@ -171,7 +171,7 @@ body{
                   
 <p> Your target data= {{item}}</p>
 
-<form action="/project/edit/{{item}}" method="post">
+<form action="/edit/{{item}}" method="post">
   <table>
 
 <tr><th align="left"> English: </th><th align="left"><input type="text" name="English" value="{{r1}}" size="100" maxlength="100"></th> </tr>

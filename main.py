@@ -1,3 +1,4 @@
+import bottle
 from bottle import route, run, debug, template, request, post, get
 import pymongo
 import csv
@@ -14,15 +15,16 @@ client = pymongo.MongoClient()
 db = client.project
 collection = db.word
 
+bottle.TEMPLATE_PATH.insert(0,'./static/views');
+
  
 @route('/')
-@route('/project')
 def index_page():
-	return template('index')
+    return template('index')
 
 @route('/words/random')
 def randomWord():
-  return server.words.random(db, 'hi')
+    return server.words.random(db, 'hi')
 
 #####################################
 
@@ -45,7 +47,7 @@ def LOG():
 ############## for guest #######################
 
 
-@route('/project/dataset')
+@route('/dataset')
 def Word():
 
     items = db.word.find().sort("English", pymongo.DESCENDING)
@@ -57,19 +59,19 @@ def Word():
 
 
 ############## about us #######################
-@route('/project/aboutus')
+@route('/aboutus')
 def about_us():
     return template('about')
 
 
 ############## contact us #######################
-@route('/project/contactus')
+@route('/contactus')
 def contact_us():
     return template('contact')
 
 ############################## EDIT GET  not yet ###################################
 
-@route('/project/edit/<_id>', method='GET')
+@route('/edit/<_id>', method='GET')
 def get_edit(_id):
     item = db.work.find_one({ "_id":ObjectId(_id)})
     return template('edit',r1=item["English"],r2=item["Hindi"], item=_id)
@@ -108,20 +110,20 @@ def post_new_item():
 
 
     db.word.insert({"English":English, "Hindi":Hindi})
-    return template('Add_success', C=English)
+    return template('status/views/Add_success', C=English)
     commit()
 
 
 ############################## DELETE not yet ###################################
 
 
-@route('/project/delete/<_id>', method='GET')
+@route('/delete/<_id>', method='GET')
 def delete(_id):
     item = db.word.find_one({ "_id":ObjectId(_id)})
     return template('delete',r1=item["English"],r2=item["Hindi"])
 
 
-@route('/project/delete/<_id>', method='POST')
+@route('/delete/<_id>', method='POST')
 def delete(_id):
 
     item = db.word.find_one({ "_id":ObjectId(_id)})
