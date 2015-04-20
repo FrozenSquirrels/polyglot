@@ -14,17 +14,18 @@ client = pymongo.MongoClient()
 db = client.project
 collection = db.word 
 
-######## the home pagge (first screen )
+######## the home pagge (first screen)
  
+@route('/')
 @route('/project')
 def index_page():
 	return template('index')
 
 @route('/words/random')
 def randomWord():
-  return server.words.random('hi')
+  return server.words.random(db, 'hi')
 
-  #####################################
+#####################################
 
     # To Enter the Admin page
 @post('/login') 
@@ -32,10 +33,6 @@ def do_login():
     username = request.forms.get('username')
     password = request.forms.get('password')
 
-    items = db.word.find().sort("English", pymongo.DESCENDING)
-    R = []
-    for item in items:
-        R.append((item["_id"],item["English"],item["Hindi"]))
     if  username == "Hanan" and password == "hhh" or username == "Reem" and password == "rrr" or username == "Nathan" and password == "nnn" :
         return template('Admin', row=R, name=username)
     else:
