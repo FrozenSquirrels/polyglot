@@ -7,7 +7,7 @@
 <table  border="0">
   <tr >
     <th>
-            <button style="color:white;border-radius: 20px/10px; width:200px; height:40px; background: #686868" onClick="window.location='/login/Add_Word'"><b>INSERT New Word </b></button>
+            <button style="color:white;border-radius: 20px/10px; width:200px; height:40px; background: #686868" onClick="window.location='/login/ADD_Word'"><b>INSERT New Word </b></button>
 
     </th>
   </tr>

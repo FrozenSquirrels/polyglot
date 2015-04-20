@@ -18,7 +18,7 @@ body{
 .blended_grid{
      display : block;
      width : 900px;
-     overflow : auto;
+/*    overflow : auto; */
      margin : 30px auto 0 auto;
 }
 .pageHeader{
@@ -149,6 +149,7 @@ body{
     <li><a href="/contactus">Contact Us</a></li>
     <li><a href="/index.html">Practice </a></li> 
   </ul>  
+<br>
 
 <script src="Script.js"></script>
 

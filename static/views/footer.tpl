@@ -39,12 +39,18 @@
 
       <!-- START SOCIAL MEDIA WIDGET -->
   <ul id="socialbar">
-  <li id="twitter"><a target="_blank" href="https://twitter.com/LearnHindi_2015"><IMG src="http://www.topproducerwebsite.com/images/site_defaults/generic/twitter.png"></a></li>
-  <li id="facebook"><a target="_blank" href="https://www.facebook.com/LearnHindiWithUs"><IMG src="http://www.topproducerwebsite.com/images/site_defaults/generic/facebook.png"></a></li></ul>
+    <li id="twitter">
+      <a target="_blank" href="https://twitter.com/LearnHindi_2015">
+      <IMG src="http://www.topproducerwebsite.com/images/site_defaults/generic/twitter.png"></a>
+    </li>
+    <li id="facebook">
+      <a target="_blank" href="https://www.facebook.com/LearnHindiWithUs">
+        <IMG src="http://www.topproducerwebsite.com/images/site_defaults/generic/facebook.png"></a></li>
+  </ul>
   <style>#socialbar img {border:0px;}
         #socialbar li img {width:24px; height:24px;}
         #socialbar li a:hover {position:relative;top:-5px;}
-        #socialbar{list-style: none outside none; padding: 0px; margin:0px; position: fixed; bottom:-5px; left:48%;z-index:99;}
+        #socialbar{list-style: none outside none; padding: 0px; margin:0px;  bottom:-5px; left:48%;z-index:99;}
         #socialbar li {display:inline;padding-right:5px;}
         #main #content-1,#pageframe {overflow:visible;}.IE 
         #main #sidebar{position:static;}
