@@ -3,7 +3,7 @@ import pymongo
 import csv
 import sys
 import tempfile
-import server.words
+#import server.words
 
 from pymongo import MongoClient
 from pymongo import DESCENDING
@@ -12,9 +12,8 @@ from bson.objectid import ObjectId
 #client = MongoClient('localhost', 8080)
 client = pymongo.MongoClient()
 db = client.project
-collection = db.word 
+collection = db.word
 
-######## the home pagge (first screen)
  
 @route('/')
 @route('/project')
@@ -28,7 +27,7 @@ def randomWord():
 #####################################
 
     # To Enter the Admin page
-@post('/login') 
+@post('/login')
 def do_login():
     username = request.forms.get('username')
     password = request.forms.get('password')
@@ -79,14 +78,14 @@ def get_edit(_id):
 @route('/login/insert', method='POST')
 def post_new_item():
     print "IN ITEM POST"
-                                                        
+
     English = request.POST.get('English', '').strip()
     Hindi = request.POST.get('Hindi', '').strip()
-   
+
 
     item["English"] = English
     item["Hindi"] = Hindi
-   
+
 
     db.word.save(item)
 
@@ -102,11 +101,11 @@ def get_new_item():
 @route('/login/insert', method='POST')
 def post_new_item():
     print "IN ITEM POST"
-                                                        
+
     English = request.POST.get('English', '').strip()
     Hindi = request.POST.get('Hindi', '').strip()
-    
-    
+
+
 
     db.word.insert({"English":English, "Hindi":Hindi})
     return template('Add_success', C=English)
