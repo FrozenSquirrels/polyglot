@@ -72,3 +72,5 @@ install libsqlite3-dev
 
 setup_web_browser_testing
 
+install mongodb-server
+
