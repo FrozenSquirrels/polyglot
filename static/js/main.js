@@ -30,9 +30,20 @@ function polyglotViewModel(){
                 prompts = JSON.parse(prompts);
                 var promptObjs = []
                 prompts.forEach(function(prompt){
-                  promptObjs.push(self.promptFactory("BASIC", prompt));
-                  promptObjs.push(self.promptFactory("LOCALFILLIN", prompt));
-                  promptObjs.push(self.promptFactory("PICTURE", prompt));
+                  var random_int = Math.floor(Math.random() * 2);
+                  switch(random_int){
+                    case 0:
+                      promptObjs.push(self.promptFactory("BASIC", prompt));
+                      break;
+                    case 1:
+                      promptObjs.push(self.promptFactory("LOCALFILLIN", prompt));
+                      break;
+                    case 2:
+                      promptObjs.push(self.promptFactory("PICTURE", prompt));
+                      break;
+                    default:
+                      console.log("random integer out of range for type selection");
+                  }
                 });
                 self.prompts(promptObjs);
             },
