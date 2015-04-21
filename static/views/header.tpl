@@ -143,7 +143,7 @@ body{
    
   <div class = "navMENU" >
   <ul>
-    <li><a href="/">Home </a></li> 
+    <li><a id="home" href="/">Home </a></li> 
     <li><a href="/aboutus">About Us</a></li> 
     <li><a href="/dataset" >Guest Enter</a></li>
     <li><a id='contact_us_link' href="/contactus">Contact Us</a></li>
