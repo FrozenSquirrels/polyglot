@@ -10,7 +10,7 @@ import time
         #self.browser.get('http://localhost:8080')
 driver = webdriver.Chrome()
 
-driver.get("http://localhost:8080/project")
+driver.get("http://localhost:8080")
 
 
 
