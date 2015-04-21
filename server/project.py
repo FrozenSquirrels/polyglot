@@ -79,10 +79,10 @@ def do_login():
     username = request.forms.get('username')
     password = request.forms.get('password')
 
-    items = db.word.find().sort("English", pymongo.DESCENDING)
+    items = db.words.find().sort("english", pymongo.DESCENDING)
     R = []
     for item in items:
-        R.append((item["_id"],item["English"],item["Hindi"]))
+        R.append((item["_id"],item["english"],item["hindi"]))
     if  username == "Hanan" and password == "hhh" or username == "Reem" and password == "rrr" or username == "Nathan" and password == "nnn" :
         return template('Admin', row=R, name=username)
     else:
@@ -108,23 +108,23 @@ def contact_us():
 
 @route('/edit/<_id>', method='GET')
 def get_edit(_id):
-    item = db.work.find_one({ "_id":ObjectId(_id)})
-    return template('edit',r1=item["English"],r2=item["Hindi"], item=_id)
+    item = db.wors.find_one({ "_id":ObjectId(_id)})
+    return template('edit',r1=item["english"],r2=item["hindi"], item=_id)
     #------------------------------ EDIT POST ---------------------------------------------
 
 @route('/login/insert', method='POST')
 def post_new_item():
     print "IN ITEM POST"
 
-    English = request.POST.get('English', '').strip()
-    Hindi = request.POST.get('Hindi', '').strip()
+    English = request.POST.get('english', '').strip()
+    Hindi = request.POST.get('hindi', '').strip()
 
 
-    item["English"] = English
-    item["Hindi"] = Hindi
+    item["english"] = English
+    item["hindi"] = Hindi
 
 
-    db.word.save(item)
+    db.words.save(item)
 
     return template('success',item=_id)
 
@@ -139,12 +139,12 @@ def get_new_item():
 def post_new_item():
     print "IN ITEM POST"
 
-    English = request.POST.get('English', '').strip()
-    Hindi = request.POST.get('Hindi', '').strip()
+    English = request.POST.get('english', '').strip()
+    Hindi = request.POST.get('hindi', '').strip()
 
 
 
-    db.word.insert({"English":English, "Hindi":Hindi})
+    db.words.insert({"english":English, "hindi":Hindi})
     return template('Add_success', C=Cereal)
     commit()
 
@@ -154,16 +154,16 @@ def post_new_item():
 
 @route('/delete/<_id>', method='GET')
 def delete(_id):
-    item = db.word.find_one({ "_id":ObjectId(_id)})
-    return template('delete',r1=item["English"],r2=item["Hindi"])
+    item = db.words.find_one({ "_id":ObjectId(_id)})
+    return template('delete',r1=item["english"],r2=item["hindi"])
 
 
 @route('/delete/<_id>', method='POST')
 def delete(_id):
 
-    item = db.word.find_one({ "_id":ObjectId(_id)})
-    English = request.POST.get('English','').strip()
-    db.word.remove(item)
+    item = db.words.find_one({ "_id":ObjectId(_id)})
+    English = request.POST.get('english','').strip()
+    db.words.remove(item)
     return template('success',item=_id)
 
 #----------------------------------------------
@@ -171,13 +171,13 @@ def delete(_id):
 @route('/dataset')
 def Word():
 
-    items = db.word.find().sort("English", pymongo.DESCENDING)
+    items = db.words.find().sort("english", pymongo.DESCENDING)
     rows = []
     for item in items:
-        rows.append((item["English"],item["Hindi"]))
+        rows.append((item["english"],item["hindi"]))
     return template('guest', row=rows)
     commit()
 
 
 debug(True)
-run(host='localhost',port=8080,reloader=True)
+run(host='0.0.0.0',port=8080,reloader=True)
