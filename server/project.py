@@ -20,7 +20,7 @@ client = pymongo.MongoClient('localhost', 27017)
 db = client.polyglot_db
 words = db.words
 
-#root to landing page (same as /project)
+#root to landing page (same as /)
 @route('/')
 def index():
     return template('index')
@@ -67,7 +67,7 @@ def practice_page():
 
 ######## the home page (first screen )
 
-@route('/project')
+@route('/')
 def index_page():
 	return template('index')
 
@@ -96,7 +96,7 @@ def LOG():
 
     ############################## EDIT GET ###################################
 
-@route('/project/edit/<_id>', method='GET')
+@route('/edit/<_id>', method='GET')
 def get_edit(_id):
     item = db.work.find_one({ "_id":ObjectId(_id)})
     return template('edit',r1=item["English"],r2=item["Hindi"], item=_id)
@@ -142,13 +142,13 @@ def post_new_item():
         ############################## DELETE ###################################
 
 
-@route('/project/delete/<_id>', method='GET')
+@route('/delete/<_id>', method='GET')
 def delete(_id):
     item = db.word.find_one({ "_id":ObjectId(_id)})
     return template('delete',r1=item["English"],r2=item["Hindi"])
 
 
-@route('/project/delete/<_id>', method='POST')
+@route('/delete/<_id>', method='POST')
 def delete(_id):
 
     item = db.word.find_one({ "_id":ObjectId(_id)})
@@ -161,4 +161,4 @@ def delete(_id):
 
 
 debug(True)
-run(host='localhost',port=8080,reloader=True)
+run(host='0.0.0.0',port=8080,reloader=True)
