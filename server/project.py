@@ -92,6 +92,16 @@ def do_login():
 def LOG():
     return template('Admin')
 
+############## about us #######################
+@route('/aboutus')
+def about_us():
+    return template('about')
+
+
+############## contact us #######################
+@route('/contactus')
+def contact_us():
+    return template('contact')
 
 
     ############################## EDIT GET ###################################
@@ -161,4 +171,4 @@ def delete(_id):
 
 
 debug(True)
-run(host='0.0.0.0',port=8080,reloader=True)
+run(host='localhost',port=8080,reloader=True)
