@@ -168,7 +168,16 @@ def delete(_id):
 
 #----------------------------------------------
 
+@route('/dataset')
+def Word():
+
+    items = db.word.find().sort("English", pymongo.DESCENDING)
+    rows = []
+    for item in items:
+        rows.append((item["English"],item["Hindi"]))
+    return template('guest', row=rows)
+    commit()
 
 
 debug(True)
-run(host='localhost',port=8080,reloader=True)
+run(host='0.0.0.0',port=8080,reloader=True)

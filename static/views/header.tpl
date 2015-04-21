@@ -147,7 +147,7 @@ body{
     <li><a href="/aboutus">About Us</a></li> 
     <li><a href="/dataset" >Guest Enter</a></li>
     <li><a id='contact_us_link' href="/contactus">Contact Us</a></li>
-    <li><a href="/index.html">Practice </a></li> 
+    <li><a href="/practice">Practice </a></li> 
   </ul>  
 <br>
 
