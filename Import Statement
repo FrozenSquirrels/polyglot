@@ -1,0 +1,7 @@
+mongoimport -d XXXX -c XXXX --type csv --file XXXX.csv --headerline
+
+-d: The name of the database
+-c: The name of the collection to import the CSV file into.
+--type: The format of the file to be imported ... CSV or JSON.
+--file: The physical location of the file on your computer.
+--headerline: This simply tells MongoDB to disregard the first line of the CSV file.
