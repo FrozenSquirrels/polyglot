@@ -16,7 +16,20 @@
 </div>
 
       <!--Reem Edit Donation Button-->
-
+      
+      <!--Reem Edit Googe Ad -->
+      
+      <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+      <!-- Second Google Ad for footer -->
+      <ins class="adsbygoogle"
+     style="display:inline-block;width:728px;height:90px"
+     data-ad-client="ca-pub-2067844127220081"
+     data-ad-slot="5754119458"></ins>
+      <script>
+      (adsbygoogle = window.adsbygoogle || []).push({});
+      </script>
+      
+      <!--Reem Edit Googe Ad -->
 
       <!--Reem Add your ad banner-->
 
