@@ -106,16 +106,16 @@ def contact_us():
 
    ############################## EDIT GET  ###################################
 
-@route('/project/edit/<_id>', method='GET')
+@route('/edit/<_id>', method='GET')
 def get_edit(_id):
-    item = db.word.find_one({ "_id":ObjectId(_id)})
+    item = db.words.find_one({ "_id":ObjectId(_id)})
     return template('edit',r1=item["English"],r2=item["Hindi"], item=_id)
     #------------------------------ EDIT POST ---------------------------------------------
 
-@route('/project/edit/<_id>', method='POST')
+@route('/edit/<_id>', method='POST')
 def post_edit(_id):
     
-    item = db.word.find_one({"_id":ObjectId(_id)})
+    item = db.words.find_one({"_id":ObjectId(_id)})
                                                         
     English = request.POST.get('English', '').strip()
     Hindi = request.POST.get('Hindi', '').strip()
@@ -125,7 +125,7 @@ def post_edit(_id):
     item["Hindi"] = Hindi
    
 
-    db.word.save(item)
+    db.words.save(item)
 
     return template('success',item=_id)
 
@@ -146,7 +146,7 @@ def post_new_item():
 
 
     db.words.insert({"english":English, "hindi":Hindi})
-    return template('Add_success', C=Cereal)
+    return template('Add_success', C=words)
     commit()
 
 
