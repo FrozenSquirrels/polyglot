@@ -104,27 +104,28 @@ def contact_us():
     return template('contact')
 
 
-    ############################## EDIT GET ###################################
+   ############################## EDIT GET  ###################################
 
-@route('/edit/<_id>', method='GET')
+@route('/project/edit/<_id>', method='GET')
 def get_edit(_id):
-    item = db.wors.find_one({ "_id":ObjectId(_id)})
-    return template('edit',r1=item["english"],r2=item["hindi"], item=_id)
+    item = db.word.find_one({ "_id":ObjectId(_id)})
+    return template('edit',r1=item["English"],r2=item["Hindi"], item=_id)
     #------------------------------ EDIT POST ---------------------------------------------
 
-@route('/login/insert', method='POST')
-def post_new_item():
-    print "IN ITEM POST"
+@route('/project/edit/<_id>', method='POST')
+def post_edit(_id):
+    
+    item = db.word.find_one({"_id":ObjectId(_id)})
+                                                        
+    English = request.POST.get('English', '').strip()
+    Hindi = request.POST.get('Hindi', '').strip()
+   
 
-    English = request.POST.get('english', '').strip()
-    Hindi = request.POST.get('hindi', '').strip()
+    item["English"] = English
+    item["Hindi"] = Hindi
+   
 
-
-    item["english"] = English
-    item["hindi"] = Hindi
-
-
-    db.words.save(item)
+    db.word.save(item)
 
     return template('success',item=_id)
 
