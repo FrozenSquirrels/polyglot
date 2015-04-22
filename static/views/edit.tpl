@@ -1,14 +1,14 @@
 % include('header.tpl')
 
 <!-- ......................................... -->
-      <div class="pageContent">
+  <div class="pageContent">
         <br><br>
 
         
                   
-<p> Your target data= {{item}}</p>
+<p> The Id of your target = {{item}}</p>
 
-<form action="/edit/{{item}}" method="post">
+<form action="/project/edit/{{item}}" method="post">
   <table>
 
 <tr><th align="left"> English: </th><th align="left"><input type="text" name="English" value="{{r1}}" size="100" maxlength="100"></th> </tr>
@@ -19,7 +19,7 @@
 
 <br><br>
 
-<input value="save" type="submit" name="save" style="color:#111111;border-radius:4px; width:90px; height:30px; background-color:#dcc8f0;" algin="center"/>
+<input value="save" type="submit" name="save" style="color:#FFFFFF;border-radius:4px; width:90px; height:30px; background-color:black;" algin="center"/>
 
 
 </form>
