@@ -8,7 +8,7 @@ import time
     #def setUp(self):
 driver = webdriver.Chrome()
 
-driver.get("http://localhost:8080/")
+driver.get("www.poly-glot.com:5555")
 
 
 
