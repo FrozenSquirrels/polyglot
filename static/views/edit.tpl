@@ -8,7 +8,7 @@
                   
 <p> The Id of your target = {{item}}</p>
 
-<form action="/project/edit/{{item}}" method="post">
+<form action="/edit/{{item}}" method="post">
   <table>
 
 <tr><th align="left"> English: </th><th align="left"><input type="text" name="English" value="{{r1}}" size="100" maxlength="100"></th> </tr>
